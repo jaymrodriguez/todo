@@ -197,7 +197,7 @@ def interactive_menu() -> None:
             if choice == "1":
                 title = prompt_non_empty("Title: ")
                 desc = prompt_non_empty("Description: ")
-                due_input = input("Due date (YYYY-MM-DD) [optional]: ").strip()
+                due_input = input("Due date (YYYY-MM-DD) (optional): ").strip()
                 due = None
                 if due_input:
                     try:
@@ -232,7 +232,7 @@ def interactive_menu() -> None:
 
                 new_title = input("New title: ").strip()
                 new_desc = input("New description: ").strip()
-                new_due = input("New due date (YYYY-MM-DD): ").strip()
+                new_due = input("New due date (YYYY-MM-DD) (Optional): ").strip()
 
                 clear_due = (new_due == "-")
                 due_val = None
@@ -293,7 +293,7 @@ def build_parser() -> argparse.ArgumentParser:
     add = sub.add_parser("add", help="Add a to-do quickly")
     add.add_argument("title", help="Title")
     add.add_argument("description", help="Short description")
-    add.add_argument("--due", help="Due date YYYY-MM-DD", default=None)
+    add.add_argument("--due", help="Due date YYYY-MM-DD (Optional)", default=None)
 
     ls = sub.add_parser("list", help="List to-dos")
     ls.add_argument("--sort", action="store_true", help="Sort by due date")
