@@ -309,7 +309,7 @@ def build_parser() -> argparse.ArgumentParser:
     upd.add_argument("id", type=int)
     upd.add_argument("--title", help="New title")
     upd.add_argument("--desc", help="New description")
-    upd.add_argument("--due", help="New due date YYYY-MM-DD")
+    upd.add_argument("--due", help="New due date YYYY-MM-DD (Optional)")
     upd.add_argument("--clear-due", action="store_true", help="Clear due date")
 
     rm = sub.add_parser("delete", help="Delete a to-do")
